@@ -1,0 +1,17 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    font-size: 1rem;
+}
+
+div {
+
+    font-style: 3rem;
+}
+
+p {
+    font-size: 20em;
+    color: #ccc;
+}
