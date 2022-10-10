@@ -52,12 +52,27 @@
 // console.log("i" + 4 + 5);
 // console.log("4" - 2);
 // console.log(4 - "4x");
-console.log("23" == 23);
-console.log(null == false);
-console.log("-4" / 0 + 1);
-console.log(null + 1);
-console.log(null + undefined);
-console.log(undefined + null);
-console.log(1 === "1");
-console.log("2" > 10);
-console.log(NaN == undefined);
+// console.log("23" == 23);
+// console.log(null == false);
+// console.log("-4" / 0 + 1);
+// console.log(null + 1);
+// console.log(null + undefined);
+// console.log(undefined + null);
+// console.log(1 === "1");
+// console.log("2" > 10);
+// console.log(NaN == undefined);
+
+function fixTheMeerkat(arr) {
+    let a = arr[2];
+    let b = arr[1];
+    let c = arr[0];
+    let abc = [a, b, c]
+    
+    return abc
+  }
+
+  console.log(fixTheMeerkat(["tail", "body", "head"]));
+
+  function openOrSenior(data){
+
+  }
