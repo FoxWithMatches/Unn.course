@@ -314,15 +314,337 @@
 
 // console.log(num);
 
-let n = 0;
-for (i = 1800; i < 2022; i++) {
-    n += 1;
-    // if (i === 1961) {
-    //     console.log(`${n} раз понадобилось чтобы получить ${i} год`);
-    // }
+// let n = 0;
+// for (i = 1800; i < 2022; i++) {
+//     n += 1;
+//     if (i === 1961) {
+//         console.log(`${n} раз понадобилось чтобы получить ${i} год`);
+//     }
 
-    if (i % 4 === 0) {
-        console.log(`${i} - високосный год`);
+    // if (i % 4 === 0) {
+    //     console.log(`${i} - високосный год`);
+    // }
+// }
+// console.log(`${n} раз цикл выполнялся`);
+
+// function main(depth) {
+//     // var depth = parseInt(readLine(), 10);
+    
+//     let day = 7;
+//     let night = 2;
+//     let daysNeed = 0;
+
+//     for (i = 0; i < depth; i ++) {
+//         i += day;
+//         i -= night;
+//         daysNeed += 1
+//         if (i >= depth) {
+//             break
+//         }
+//     }
+//     return daysNeed
+// }
+
+// console.log(main(128));
+
+// let message;
+// let login = "useeer";
+
+// message = (login === "manager") ? console.log(message = "hello") :
+// (login === "admin") ? console.log(message = "helo") :
+// (login === "user") ? console.log(message = "hola") : console.log("hola-ola")
+
+// function greeting(userN = "user") {
+//     console.log(` Hello ${userN}`);
+// }
+
+// greeting("Pavel")
+
+// function powInt(a, b = 1) {
+//     console.log(a ** b);
+// }
+
+// powInt(2)
+
+// function summ(a = []) {
+//     let result = 0;
+//     for (i = 0; i < a.length; i++) {
+//         result += a[i]
+//     } 
+//     console.log(result / a.length);
+// }
+
+// summ([1, 2, 3, 4])
+
+// const getName = (name) => `Name - ${name}`;
+
+// console.log(getName("Alice"));
+
+// const str = (newStr, n) => {
+//     for (i = 0; i < n; i++) {
+//         console.log(newStr)
+//     }
+// }
+
+// str("alice", 2);
+// str("pavel", 4);
+
+// const alphabet = (a) => {
+
+//     let arr2 = "aeiouy";
+//     let res;
+
+//     for (i = 0; i < arr2.length; i ++) {
+//         if (a === arr2[i]) {
+//             res = "true"
+//             break
+//         } else {
+//             res = "false"
+//         }
+//     }
+//     console.log(res);
+// }
+
+// alphabet("o")
+
+// const pal = (a) => a.split("").reverse().join("") == a ? console.log("true") : console.log("false");
+// pal("шалашовка")
+
+
+
+// function summa(callback) {
+//     return callback
+// }
+
+// function s() {
+//     console.log("Hello World!");
+// }
+
+// summa(s())
+
+// const two = (a) => console.log( a ** 2);
+// two(3)
+
+// const summ = (a, b) => console.log(a + b);
+// summ(1, 2)
+
+// const divider = (a, b, c) => console.log((a - b) / c);
+// divider(10, 2, 2)
+
+// const dayOfWeek = (a) => {
+//     switch (a) {
+//         case 1: console.log("Monday");
+//         break;
+//         case 2: console.log("Tuesday");
+//         break;
+//         case 3: console.log("Wednesday");
+//         break;
+//         case 4: console.log("Thursday");
+//         break;
+//         case 5: console.log("Friday");
+//         break;
+//         case 6: console.log("Saturday");
+//         break;
+//         case 7: console.log("Sunday");
+//         break;
+//         default: console.log("Please enter a number from 1 to 7");
+//     }
+// }
+// dayOfWeek(9)
+
+// const equalsNum = (a, b) => a === b ? console.log(true) : console.log(false);
+// equalsNum(1, 4)
+
+// const summNum = (a, b) => (a + b) > 10 ? console.log(true) : console.log(false);
+// summNum(1, 20)
+
+// const negativeNum = (a) => a >= 0 ? console.log(true) : console.log(false);
+// negativeNum(-10)
+
+//8
+const isNumberInRange = (a) => a > 0 && a < 10 ? true : false;
+// isNumberInRange(20)
+
+//9
+const positiveNum = (a, callback) => {
+    let arr = [];
+    for (i = 0; i < a.length; i++) {
+        if (callback(a[i])) {
+            arr.push(a[i]);
+        }
+    }
+    console.log(arr);
+}
+// positiveNum([1, 20, 3, 44, 12, 9, 4], isNumberInRange)
+
+//10
+const getDigitsSum = (a) => {
+    let res = String(a);
+
+    let resNum = 0;
+
+    for (i = 0; i < res.length; i++) {
+        resNum += Number(res[i])
+    }
+
+    return resNum;
+}
+// console.log(getDigitsSum(121))
+
+//11
+const dateYear = (callback) => {
+    let arr = [];
+    for (let i = 1; i <= 2020; i++) {
+        if (callback(i) == 13) {
+            arr.push(i)
+        }
+    }
+    return console.log(arr);
+}
+// dateYear(getDigitsSum)
+
+
+
+// 12
+const isEven = (a) => a % 2 === 0 ? true : false;
+// isEven(3)
+
+//13
+const arrIsEven = (a, callback) => {
+    let res = [];
+    for (i = 0; i < a.length; i ++) {
+        if (callback(a[i])) {
+            res.push(a[i])
+        }
+     }  
+    console.log(res);
+}
+// arrIsEven([1, 2, 3, 4, 8, 10, 3], isEven)
+
+//14
+const getDivisors = (a) => {
+    let arr = [];
+    for (i = 0; i < a; i++) {
+        if (a % i === 0) {
+            arr.push(i)
+        }
+    }
+    console.log(arr);
+}
+// getDivisors(12)
+
+//15
+const summNine = (a, callback) => {
+    let b = callback(a);
+    while (b > 9) {
+        b = callback(b);
+    }
+    return b;
+}
+// console.log(summNine(1599, getDigitsSum))
+
+//16
+const pal = (a) => a.split("").reverse().join("") === a ? console.log("true") : console.log("false");
+// pal("шалаш")
+
+
+let myFavoriteFilm = {
+    nameFilm: "Shantaram",
+    year: 2022,
+    producer: "Alex Contier",
+    country: "USA"
+}
+
+myFavoriteFilm.price = 10000200002;
+
+const hello = function() {
+   return `Name of film - ${myFavoriteFilm.nameFilm}`
+}
+
+delete myFavoriteFilm.year
+
+myFavoriteFilm.hello = hello()
+// console.log(myFavoriteFilm)
+
+const upperOrLowerCase = (str, a) => str[a].toUpperCase() === str[a] ? true : false;
+// console.log(upperOrLowerCase("ZanoZa", 0))
+
+const replaceIncludes = (str) => {
+    return newStr = str.replace(/find/i, "replace");
+}
+// console.log(replaceIncludes("hello dear. FiNd global world or find yourself"))
+
+const newNumber = (min, max) => {
+    return Math.round((Math.random() * (max - min) + min));
+}
+// console.log(newNumber(1, 10));
+
+const schedule = {
+    // name: "Alice"
+};
+
+const isEmpty = (obj) => {
+    for (let key in obj) {
+        if (key in obj) {
+            return true;
+        } 
+    }
+    return false;
+}
+// console.log(isEmpty(schedule));
+
+let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+const summa = (obj) => {
+    let summ = 0;
+    for (let key in obj) {
+        summ += obj[key]
+    }
+    return summ;
+}
+// console.log(summa(salaries));
+
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+
+const multiplyNumeric = (obj) => {
+    for (let key in obj) {
+        if (typeof obj[key] === "number") {
+            obj[key] *= 2;
+        }
+        return obj;
     }
 }
-console.log(`${n} раз цикл выполнялся`);
+// console.log(multiplyNumeric(menu)); 
+// console.log(typeof menu);
+
+let nameVasya = "vasya";
+nameVasya[0] = "V";
+
+let newvasya = nameVasya[0].toUpperCase() + nameVasya.slice(1);
+// console.log(newvasya);
+
+const checkSpam = (str) => {
+    let lowerCase = str.toLowerCase();
+    return lowerCase.includes("viagra") || lowerCase.includes("xxx") ? true : false;
+}
+// console.log(checkSpam("buy now"));
+
+const truncate = (str, maxLength) => {
+    if (str.length > maxLength) {
+      return str.slice(0, maxLength) + "..."
+    }
+    return str;
+}
+// console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+
+const extractCurrencyValue = (str) => {
+    return +str.slice(1);
+}
+// console.log(extractCurrencyValue("$120"));
