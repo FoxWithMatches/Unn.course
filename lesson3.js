@@ -648,3 +648,175 @@ const extractCurrencyValue = (str) => {
     return +str.slice(1);
 }
 // console.log(extractCurrencyValue("$120"));
+
+//6-------//
+//1
+const stringToArray = (str) => str.split(" ");
+// console.log(stringToArray("Hello my dear friend"));
+
+//2
+const deleteCharacters = (str, length) => str.slice(0, length)
+// console.log(deleteCharacters("my beautiful day", 9));
+
+//3
+const insertDash = (str) => str.replace(/ /ig, "-").toUpperCase();
+// console.log(insertDash("hello world my beautiful"));
+
+//4
+const registerStr = (str) => str[0].toUpperCase() + str.slice(1);
+// console.log(registerStr("hello world my darling"));
+
+//5
+const capitalize = (str) => {
+    let newArr = str.split(" ");
+    for (i = 0; i < newArr.length; i++) {
+        newArr[i] = newArr[i][0].toUpperCase() + newArr[i].slice(1);
+    }
+    return newArr.join(" ");
+}
+// console.log(capitalize("dear my friend"));
+
+//6
+const changeRegister = (str) => {
+    let arr = str.split("");
+    let newArr = [];
+    for (key in arr) {
+        if (arr[key] == arr[key].toUpperCase()) {
+            newArr.push(arr[key].toLowerCase())
+        } else {
+            newArr.push(arr[key].toUpperCase())
+        }
+    }
+    return newArr.join("");
+}
+// console.log(changeRegister("AbDSndsrGG"));
+
+//7
+const removeChar = (str) => newStr = str.replace(/[^a-z\d]/ig, "");
+// console.log(removeChar("!dsDd34342<>_++++)_!@"));
+
+//8---------
+const zeros = (num, len) => {
+    let str = num + "e" + len;
+    return +str;
+}
+// console.log(zeros(1, 9));
+
+//9
+const comprasion = (str1, str2) => str1.toLowerCase() === str2.toLowerCase()
+    ? true : false;
+// console.log(comprasion("hello b", "HellO b"));
+
+//10
+const insensitiveSearch = (str1, str2) => {
+    if (str1.toLowerCase().indexOf(str2.toLowerCase()) !== -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// console.log(insensitiveSearch("hello world my darling", "H"));
+
+//11
+const initCap = (str) => {
+    let newStr = str.split(" ");
+    for (let i = 0; i < newStr.length; i++) {
+       newStr[i] = newStr[i][0].toUpperCase() + newStr[i].slice(1).toLowerCase()
+    }
+    return newStr.join("")
+}
+// console.log(initCap("hello world Mini map"));
+
+//12--------
+const initSnake = (str) => {
+    let newStr = str.split(" ");
+    for (let i = 0; i < newStr.length; i++) {
+        newStr[i] = newStr[i][0].toLowerCase() + newStr[i].slice(1).toLowerCase()
+    }
+    return newStr.join(" ").replace(/ /ig, "_")
+}
+// console.log(initSnake("Hello World My Name Is ALice"));
+
+//13
+const repeatStr = (str, n) => str.repeat(n);
+// console.log(repeatStr("hello", 5));
+
+//14
+const path = (pathName) => {
+    let arr = pathName.split("/");
+    return arr[arr.length - 1]
+}
+// console.log(path("https://docs.google"));
+
+//15
+const stringEndWith = (str, str1) => {
+    let arr = str.split("/");
+    let word = arr[arr.length - 1]
+    if (word === str1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// console.log(stringEndWith("https://docs/google", "gooogle"));
+
+//16--------
+const getSubstr = (str, char, pos) => {
+    let num = str.indexOf(char, pos);
+    return str.slice(num)
+}
+// console.log(getSubstr("https://docs/google", "g", 2));
+
+//17
+const insert = (str, substr, pos) => {
+    return str.slice(0, pos) + substr + str.slice(pos)
+}
+// console.log(insert("hello", "alisa", 2));
+
+//18
+const limitSymb = (str, n, symb) => {
+    if (str.length > n) {
+        str.slice(0, n)
+    }
+    if (symb !== undefined) {
+        return str + symb;
+    } else {
+        return str + "..."
+    }
+    
+}
+// console.log(limitSymb("https://docs/google", 8));
+
+//19-------------
+const count = (str, stringSearch) => {
+    let counter = 0;
+    let arr = [];
+    while (true) {
+        let pos = str.indexOf(stringSearch, counter);
+        arr.push(pos);
+        counter = pos + 1;
+        if (pos === -1) {
+            break;
+        }
+    }
+    return arr.length - 1;
+}
+// console.log(count("hello world my name is alice", "a"));
+
+//20
+const strip = (str) => str.replace(/ /ig, "");
+// console.log(strip("hello world my name is alice"));
+
+//21
+const cutString = (str, n) => {
+    let arr = str.split(" ");
+    if (arr.length > n) {
+        arr.splice(n)
+    }
+    return arr.join(" ");
+}
+// console.log(cutString("hello world my name is alice", 2));
+
+//22
+const findWord = (word, str) => str.indexOf(word) !== -1 ? true : false;
+// console.log(findWord("alice", "hello world my name is alice"));
