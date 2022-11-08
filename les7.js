@@ -187,7 +187,7 @@ const notReverse = (arr) => {
 }
 // console.log(notReverse([1, 2, 3, 4, 5]));
 
-//10--------0----
+//10--------
 const sumTen = (arr) => {
     let newArr = []
     let res = 0
