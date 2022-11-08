@@ -405,7 +405,7 @@
 //     console.log(res);
 // }
 
-// alphabet("o")
+// alphabet("orerrere")
 
 // const pal = (a) => a.split("").reverse().join("") == a ? console.log("true") : console.log("false");
 // pal("шалашовка")
@@ -692,15 +692,27 @@ const changeRegister = (str) => {
 // console.log(changeRegister("AbDSndsrGG"));
 
 //7
-const removeChar = (str) => newStr = str.replace(/[^a-z\d]/ig, "");
-// console.log(removeChar("!dsDd34342<>_++++)_!@"));
+const removeChar = (str) => newStr = str.replace(/[^a-zа-я\d]/ig, "");
+// console.log(removeChar("!dsDd34342f,авыв< привет как дл67в>_++++)_!@"));
 
 //8---------
-const zeros = (num, len) => {
-    let str = num + "e" + len;
-    return +str;
-}
+// const zeros = (num, len) => {
+//     let str = num + "e" + len;
+//     return +str;
+// }
 // console.log(zeros(1, 9));
+
+const zeros = (num, len) => {
+    let zeroStr = ""
+    if (num >= 0) {
+       zeroStr = "+" + String(num).padStart(len, "0") 
+    } else {
+        num = Math.abs(num);
+        zeroStr = "-" + String(num).padStart(len, "0")
+    }
+    return zeroStr
+}
+// console.log(zeros(7, 10));
 
 //9
 const comprasion = (str1, str2) => str1.toLowerCase() === str2.toLowerCase()
@@ -761,11 +773,22 @@ const stringEndWith = (str, str1) => {
 // console.log(stringEndWith("https://docs/google", "gooogle"));
 
 //16--------
-const getSubstr = (str, char, pos) => {
-    let num = str.indexOf(char, pos);
-    return str.slice(num)
-}
+// const getSubstr = (str, char, pos) => {
+//     let num = str.indexOf(char, pos);
+//     return str.slice(num)
+// }
 // console.log(getSubstr("https://docs/google", "g", 2));
+
+const getSubstr = (str, char, pos) => {
+    let str1 = ""
+    if (pos === "+") {
+        str1 = str.split(char).pop()
+    } else {
+        str1 = str.split(char).shift()
+    }
+    return str1
+}
+// console.log(getSubstr("convertedToSnakeCaseStyle", "k", "f"));
 
 //17
 const insert = (str, substr, pos) => {
@@ -787,7 +810,7 @@ const limitSymb = (str, n, symb) => {
 }
 // console.log(limitSymb("https://docs/google", 8));
 
-//19-------------
+//19
 const count = (str, stringSearch) => {
     let counter = 0;
     let arr = [];
@@ -820,3 +843,168 @@ const cutString = (str, n) => {
 //22
 const findWord = (word, str) => str.indexOf(word) !== -1 ? true : false;
 // console.log(findWord("alice", "hello world my name is alice"));
+
+//sorted
+const findSmallestInt = (args) => {
+      const sorted = args.sort((a,b) => a - b);
+      return args[0];
+    }
+// console.log(findSmallestInt([78,56,232,12,8]))
+
+//многомерный массив
+var number = function(busStops){
+    let people = 0;
+    for (let i = 0; i < busStops.length; i++) {
+        people += busStops[i][0] - busStops[i][1]            
+    }
+    return people;
+  }
+//console.log(number([[10,0],[3,5],[5,8]]));
+
+//palindrom
+const isPalindrome = (x) => x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false;
+// console.log(isPalindrome("aBbar"));
+
+//pow
+const isPow = (a) => Math.pow(a, 2);
+// console.log(isPow(2));
+
+function findAverage(array) {
+    // your code here
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        count += array[i]
+    }
+    if (array.length == 0) {
+        return 0;
+    } else {
+        return count / array.length;
+    }
+}
+// console.log(findAverage([]));
+
+function unusualFive() {
+    let arr = [1, 2, 2, 4, 4];
+    return arr.length;
+}
+
+function finalGrade (exam, projects) {
+    let balls;
+    if (exam > 90 || projects > 10) {
+        balls = 100;
+    } else if (exam > 75 && projects >= 5) {
+        balls = 90;
+    } else if (exam > 50 && projects >= 2) {
+        balls = 75;
+    }  else {
+        balls = 0;
+    }
+    return balls;
+}
+// console.log(finalGrade(100, 12));
+
+function removeUrlAnchor(url){
+    if (url.indexOf("#") == -1) {
+        return url;
+    } else {
+        let num = url.indexOf("#");
+        return url.slice(0, num)
+    }
+}
+// console.log(removeUrlAnchor("www.codewars.com#about"));
+
+//подсчет гласных
+function getCount(str) {
+    // let aaa = ["a", "e", "i", "o", "u"];
+    // let arr = str.toLowerCase().split("");
+    // let count = arr.reduce((sum, val) => {
+    //     if (aaa.indexOf(val) !== -1) {
+    //         sum += 1;
+    //     }
+    //     return sum;
+    // }, 0);
+
+    // return count;
+    return str.replace(/[^aeiou]/ig, "").length;
+}
+// console.log(getCount("abracadabra"));
+
+function XO(str) {
+    str.toLowerCase();
+    let x = str.replace(/[^x]/ig, "").length;
+    let o = str.replace(/[^o]/ig, "").length;
+    if (x !== o) {
+        return false;
+    } else {
+        return true;
+    }
+}
+// console.log(XO("xxOxo"));
+
+function hoopCount (n) {
+    return (n > 10) ? "Great, now move on to tricks" : "Keep at it until you get it"
+ }
+
+ //fill array
+function between(a, b) {
+    let arr = [];
+    arr.push(a);
+    while (arr[arr.length - 1] !== b) {
+        arr.push(a += 1)
+    }
+    return arr;
+}
+// console.log(between(-2, 2));
+
+function reverseWords(str) {
+    let arr = str.split(" ");
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i++) {
+        arr2.push(arr[i].split("").reverse().join(""));
+    }
+    return arr2.join(" ")
+}
+// console.log(reverseWords("The quick brown fox jumps over the lazy dog"));
+
+function nameShuffler(str){
+    let arr = str.split(" ");
+    let newArr = [];
+    newArr[0] = arr[1];
+    newArr[1] = arr[0];
+    return newArr.join(" ")
+}
+
+// const mouthSize = (animal) => (animal.toLowerCase() === "alligator") ? "small" : "wide";
+
+function remove (string) {
+    let newstr= string;
+    if (string[string.length -1] === "!") {
+        newstr = string.slice(0, string.length - 1)
+    }
+    return newstr
+}
+// console.log(remove("Hi!"));
+
+const names = [{name: " Alex"}, {name: "Alice"}]
+const findElem = names.find((el) => el.name === "Alice");
+// console.log(findElem);
+
+const filterArr = names.filter((el) => el.name === "Alice");
+// console.log(filterArr);
+
+const  mapArr = names.map((el) => el.name)
+// console.log(mapArr);
+
+const arr = names.forEach((el) => (el.name = "Unknown"));
+// console.log(arr);
+// console.log(names);
+
+const arr2 = [1, 2, 3, 4, -6];
+const result = arr2.reduce((prev, cur) => {
+    if  (cur > 0) {
+       return prev + cur;
+    }
+    return prev;
+}, 0);
+//0 - 1ый параметер который принимает prev на первой итерации
+// console.log(result);

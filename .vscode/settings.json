@@ -1,4 +1,5 @@
 {
-    "editor.fontLigatures": false,
-    "editor.formatOnType": false
+    "editor.formatOnType": false,
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true
 }
