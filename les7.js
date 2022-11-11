@@ -199,7 +199,7 @@ const sumTen = (arr) => {
     }
     return newArr
 }
-// console.log(sumTen([1, 3, 8, 9]));
+console.log(sumTen([1, 3, 8, 9]));
 
 //11
 const fillArr = (n, length) => {
